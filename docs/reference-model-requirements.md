@@ -11,39 +11,39 @@ This document summarizes the [requirements](https://github.com/cntt-n/CNTT/blob/
 
 | Reference Model Section | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Implementation Reference |
 |---|---|---|---|---|---|
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.001 | Max number of vCPU that can be assigned to a single Pod by the Cloud Infrastructure | At least 16 <sup>(1)</sup> | At least 16 <sup>(1)</sup> | [Flavors](./README.md#infrastructure-flavors) |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.002 | Max memory in MB that can be assigned to a single Pod by the Cloud Infrastructure | at least 32 GB<sup>(1)</sup> | at least 32 GB<sup>(1)</sup> | [Flavors](./README.md#infrastructure-flavors) |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.003 | Max storage in GB that can be assigned to a single Pod by the Cloud Infrastructure | at least 320 GB<sup>(1)</sup> | at least 320 GB<sup>(1)</sup> | [Flavors](./README.md#infrastructure-flavors) |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.004 | Max number of connection points that can be assigned to a single Pod by the Cloud Infrastructure | 6 | 6 | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.005 | Max storage in GB that can be attached / mounted to Pod by the Cloud Infrastructure | Up to 16TB<sup>(2)</sup> | Up to 16TB<sup>(2)</sup> | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.006 | CPU pinning support | Not required | Must support | [Flavors](./README.md#infrastructure-flavors) |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.007 | NUMA support | Not required | Must support | [Flavors](./README.md#infrastructure-flavors) |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.008 | IPSec Acceleration using the virtio-ipsec interface | Not required | Optional | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.009 | Crypto Acceleration using the virtio-crypto interface | Not required | Optional | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.010 | Transcoding Acceleration | Not required | Not required | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.011 | Programmable Acceleration | Not required | Not required | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.012 | Enhanced Cache Management: L=Lean; E=Equal; X=eXpanded | E | E | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.013 | SR-IOV over PCI-PT | Must support | Not required | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.014 | Hardware coprocessor support (GPU/NPU) | Not required | Not required | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.015 | SmartNICs | Optional | Not required | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.016 | FPGA/other Acceleration H/W | Optional | Not required | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | *e.cap.017* | *Ability to monitor L2-L7 data from workload* | *n/a<sup>(3)</sup>* | *n/a<sup>(3)</sup>* | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.cap.014 | Indicates the number of CPU cores consumed by the Cloud Infrastructure on the worker nodes | 2 | 2 | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.cap.015 | Indicates the memory consumed by Cloud Infrastructure on the worker nodes | 16 GB | 16GB | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.cap.016 | Number of virtual cores per physical core; also known as CPU overbooking ratio that is required | 1:1 | 1:1 | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.cap.017 | QoS enablement of the connection point (vNIC or interface)| Not required | Must support | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.cap.018 | Support for huge pages | Not required | Must support | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.pm.001  | Monitor worker node CPU usage, per nanosecond | Must support | Must support | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.pm.002  | Monitor pod CPU usage, per nanosecond | Must support | Must support | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.pm.003  | Monitor worker node CPU utilisation (%) | Must support | Must support | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.pm.004  | Monitor pod CPU utilisation | Must support | Must support | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.pm.005  | Measure external storage IOPs | Must support | Must support | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.pm.006  | Measure external storage throughput | Must support | Must support | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.pm.007  | Measure external storage capacity | Must support | Must support | |
+| [4.2.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.001 | Max number of vCPU that can be assigned to a single Pod by the Cloud Infrastructure | At least 16 <sup>(1)</sup> | At least 16 <sup>(1)</sup> | [Flavors](./README.md#infrastructure-flavors) |
+| [4.2.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.002 | Max memory in MB that can be assigned to a single Pod by the Cloud Infrastructure | at least 32 GB<sup>(1)</sup> | at least 32 GB<sup>(1)</sup> | [Flavors](./README.md#infrastructure-flavors) |
+| [4.2.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.003 | Max storage in GB that can be assigned to a single Pod by the Cloud Infrastructure | at least 320 GB<sup>(1)</sup> | at least 320 GB<sup>(1)</sup> | [Flavors](./README.md#infrastructure-flavors) |
+| [4.2.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.004 | Max number of connection points that can be assigned to a single Pod by the Cloud Infrastructure | 6 | 6 | |
+| [4.2.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.005 | Max storage in GB that can be attached / mounted to Pod by the Cloud Infrastructure | Up to 16TB<sup>(2)</sup> | Up to 16TB<sup>(2)</sup> | |
+| [4.2.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.006 | CPU pinning support | Not required | Must support | [Flavors](./README.md#infrastructure-flavors) |
+| [4.2.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.007 | NUMA support | Not required | Must support | [Flavors](./README.md#infrastructure-flavors) |
+| [4.2.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.008 | IPSec Acceleration using the virtio-ipsec interface | Not required | Optional | |
+| [4.2.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.009 | Crypto Acceleration using the virtio-crypto interface | Not required | Optional | |
+| [4.2.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.010 | Transcoding Acceleration | Not required | Not required | |
+| [4.2.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.011 | Programmable Acceleration | Not required | Not required | |
+| [4.2.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.012 | Enhanced Cache Management: L=Lean; E=Equal; X=eXpanded | E | E | |
+| [4.2.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.013 | SR-IOV over PCI-PT | Must support | Not required | |
+| [4.2.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.014 | Hardware coprocessor support (GPU/NPU) | Not required | Not required | |
+| [4.2.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.015 | SmartNICs | Optional | Not required | |
+| [4.2.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.016 | FPGA/other Acceleration H/W | Optional | Not required | |
+| [4.2.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | *e.cap.017* | *Ability to monitor L2-L7 data from workload* | *n/a<sup>(3)</sup>* | *n/a<sup>(3)</sup>* | |
+| [4.2.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.cap.014 | Indicates the number of CPU cores consumed by the Cloud Infrastructure on the worker nodes | 2 | 2 | |
+| [4.2.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.cap.015 | Indicates the memory consumed by Cloud Infrastructure on the worker nodes | 16 GB | 16GB | |
+| [4.2.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.cap.016 | Number of virtual cores per physical core; also known as CPU overbooking ratio that is required | 1:1 | 1:1 | |
+| [4.2.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.cap.017 | QoS enablement of the connection point (vNIC or interface)| Not required | Must support | |
+| [4.2.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.cap.018 | Support for huge pages | Not required | Must support | |
+| [4.2.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.pm.001  | Monitor worker node CPU usage, per nanosecond | Must support | Must support | |
+| [4.2.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.pm.002  | Monitor pod CPU usage, per nanosecond | Must support | Must support | |
+| [4.2.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.pm.003  | Monitor worker node CPU utilisation (%) | Must support | Must support | |
+| [4.2.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.pm.004  | Monitor pod CPU utilisation | Must support | Must support | |
+| [4.2.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.pm.005  | Measure external storage IOPs | Must support | Must support | |
+| [4.2.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.pm.006  | Measure external storage throughput | Must support | Must support | |
+| [4.2.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | i.pm.007  | Measure external storage capacity | Must support | Must support | |
 
 
-**(1)** Defined in the `.4xlarge` flavour in section [4.2.1.1 Predefined Compute Flavours](../../../ref_model/chapters/chapter04.md#4211-predefined-compute-flavours)<br>
-**(2)** Defined in the `.bronze` configuration in section [4.2.3 Storage Extensions](../../../ref_model/chapters/chapter04.md#423-storage-extensions)<br>
+**(1)** Defined in the `.4xlarge` flavour in section [4.2.1.1 Predefined Compute Flavours](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#4211-predefined-compute-flavours)<br>
+**(2)** Defined in the `.bronze` configuration in section [4.2.3 Storage Extensions](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#423-storage-extensions)<br>
 **(3)** In Kubernetes based infrastructures packet monitoring is out of the scope for the infrastructure.
 
 ### 2.2.2 Virtual Network Interface Specifications
@@ -52,38 +52,38 @@ The required number of connection points to a Pod is described in `e.cap.004` ab
 
 | Reference Model Section | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Specification Reference |
 |---|---|---|---|---|---|
-| [4.2.2](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications) | n1, n2, n3, n4, n5, n6	| 1, 2, 3, 4, 5, 6 Gbps | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
-| [4.2.2](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications) | nn10, n20, n30, n40, n50, n60	| 10, 20, 30, 40, 50, 60 Gbps | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
-| [4.2.2](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications) | n25, n50, n75, n100, n125, n150	| 25, 50, 75, 100, 125, 150 Gbps | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
-| [4.2.2](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications) | nn50, n100, n150, n200, n250, n300	| 50, 100, 150, 200, 250, 300 Gbps | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
-| [4.2.2](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications) | n100, n200, n300, n400, n500, n600	| 100, 200, 300, 400, 500, 600 Gbps | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
+| [4.2.2](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications) | n1, n2, n3, n4, n5, n6	| 1, 2, 3, 4, 5, 6 Gbps | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
+| [4.2.2](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications) | nn10, n20, n30, n40, n50, n60	| 10, 20, 30, 40, 50, 60 Gbps | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
+| [4.2.2](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications) | n25, n50, n75, n100, n125, n150	| 25, 50, 75, 100, 125, 150 Gbps | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
+| [4.2.2](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications) | nn50, n100, n150, n200, n250, n300	| 50, 100, 150, 200, 250, 300 Gbps | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
+| [4.2.2](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications) | n100, n200, n300, n400, n500, n600	| 100, 200, 300, 400, 500, 600 Gbps | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
 
 
 ### 2.2.3 Cloud Infrastructure Software Profile Requirements
 
 | Reference Model Section | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Implementation Reference |
 |---|---|---|---|---|---|
-| [5.2.1](../../../ref_model/chapters/chapter05.md#521-virtual-compute) | infra.com.cfg.001 | CPU allocation ratio | 1:1 | 1:1 | [Substrate](./README.md#substrate-configuration) |
-| [5.2.1](../../../ref_model/chapters/chapter05.md#521-virtual-compute) | infra.com.cfg.002 | NUMA awareness | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
-| [5.2.1](../../../ref_model/chapters/chapter05.md#521-virtual-compute) | infra.com.cfg.003 | CPU pinning capability | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
-| [5.2.1](../../../ref_model/chapters/chapter05.md#521-virtual-compute) | infra.com.cfg.004 | Huge Pages | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
-| [5.2.2](../../../ref_model/chapters/chapter05.md#522-virtual-storage) | infra.stg.cfg.002 | Storage Block | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
-| [5.2.2](../../../ref_model/chapters/chapter05.md#522-virtual-storage) | infra.stg.cfg.003 | Storage with replication | Not required | Must support | [Substrate](./README.md#substrate-configuration) |
-| [5.2.2](../../../ref_model/chapters/chapter05.md#522-virtual-storage) | infra.stg.cfg.004 | Storage with encryption | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
-| [5.2.2](../../../ref_model/chapters/chapter05.md#522-virtual-storage) | infra.stg.acc.cfg.001 | Storage IOPS oriented | Not required | Must support | [Substrate](./README.md#substrate-configuration) |
-| [5.2.2](../../../ref_model/chapters/chapter05.md#522-virtual-storage) | infra.stg.acc.cfg.002 | Storage capacity oriented | Not required | Not required | |
-| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.cfg.001 | IO virtualisation using virtio1.1 | Must support<sup>(1)</sup> | Must support<sup>(1)</sup>| [Substrate](./README.md#substrate-configuration) |
-| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.cfg.002 | The overlay network encapsulation protocol needs to enable ECMP in the underlay to take advantage of the scale-out features of the network fabric.<sup>(2)</sup> | Must support VXLAN, MPLSoUDP, GENEVE, other | *No requirement specified* | [Substrate](./README.md#substrate-configuration) |
-| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.cfg.003 | Network Address Translation | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
-| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.cfg.004 | Security Groups | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
-| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.cfg.005 | SFC support | Not required | Must support | [Substrate](./README.md#substrate-configuration) |
-| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.cfg.006 | Traffic patterns symmetry | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
-| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.acc.cfg.001 | vSwitch optimisation | Not required | Must support DPDK<sup>(3)</sup>| [Substrate](./README.md#substrate-configuration) |
-| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.acc.cfg.002 | Support of HW offload | Not required | Must support SmartNic | [Substrate](./README.md#substrate-configuration) |
-| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.acc.cfg.003 | Crypto acceleration | Not required | Must support | [Substrate](./README.md#substrate-configuration) |
-| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.acc.cfg.004 | Crypto Acceleration Interface | Not required | Must support | [Substrate](./README.md#substrate-configuration) |
+| [5.2.1](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#521-virtual-compute) | infra.com.cfg.001 | CPU allocation ratio | 1:1 | 1:1 | [Substrate](./README.md#substrate-configuration) |
+| [5.2.1](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#521-virtual-compute) | infra.com.cfg.002 | NUMA awareness | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
+| [5.2.1](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#521-virtual-compute) | infra.com.cfg.003 | CPU pinning capability | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
+| [5.2.1](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#521-virtual-compute) | infra.com.cfg.004 | Huge Pages | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
+| [5.2.2](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#522-virtual-storage) | infra.stg.cfg.002 | Storage Block | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
+| [5.2.2](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#522-virtual-storage) | infra.stg.cfg.003 | Storage with replication | Not required | Must support | [Substrate](./README.md#substrate-configuration) |
+| [5.2.2](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#522-virtual-storage) | infra.stg.cfg.004 | Storage with encryption | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
+| [5.2.2](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#522-virtual-storage) | infra.stg.acc.cfg.001 | Storage IOPS oriented | Not required | Must support | [Substrate](./README.md#substrate-configuration) |
+| [5.2.2](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#522-virtual-storage) | infra.stg.acc.cfg.002 | Storage capacity oriented | Not required | Not required | |
+| [5.2.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.cfg.001 | IO virtualisation using virtio1.1 | Must support<sup>(1)</sup> | Must support<sup>(1)</sup>| [Substrate](./README.md#substrate-configuration) |
+| [5.2.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.cfg.002 | The overlay network encapsulation protocol needs to enable ECMP in the underlay to take advantage of the scale-out features of the network fabric.<sup>(2)</sup> | Must support VXLAN, MPLSoUDP, GENEVE, other | *No requirement specified* | [Substrate](./README.md#substrate-configuration) |
+| [5.2.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.cfg.003 | Network Address Translation | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
+| [5.2.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.cfg.004 | Security Groups | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
+| [5.2.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.cfg.005 | SFC support | Not required | Must support | [Substrate](./README.md#substrate-configuration) |
+| [5.2.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.cfg.006 | Traffic patterns symmetry | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
+| [5.2.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.acc.cfg.001 | vSwitch optimisation | Not required | Must support DPDK<sup>(3)</sup>| [Substrate](./README.md#substrate-configuration) |
+| [5.2.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.acc.cfg.002 | Support of HW offload | Not required | Must support SmartNic | [Substrate](./README.md#substrate-configuration) |
+| [5.2.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.acc.cfg.003 | Crypto acceleration | Not required | Must support | [Substrate](./README.md#substrate-configuration) |
+| [5.2.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.acc.cfg.004 | Crypto Acceleration Interface | Not required | Must support | [Substrate](./README.md#substrate-configuration) |
 
-**(1)** [Workload Transition Guidelines.](../chapters/appendix-a.md) might have other interfaces (such as SR-IOV VFs to be directly passed to a VM or a Pod) or NIC-specific drivers on guest machines transiently allowed until more mature solutions are available with an acceptable level of efficiency to support telecom workloads (for example regarding CPU and energy consumption).<br>
+**(1)** [Workload Transition Guidelines.](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/appendix-a.md) might have other interfaces (such as SR-IOV VFs to be directly passed to a VM or a Pod) or NIC-specific drivers on guest machines transiently allowed until more mature solutions are available with an acceptable level of efficiency to support telecom workloads (for example regarding CPU and energy consumption).<br>
 **(2)** In Kubernetes based infrastructures network separation is possible without an overlay (e.g.: with IPVLAN)<br>
 **(3)** This feature is not applicable for Kubernetes based infrastructures due to lack of vSwitch however workloads need access to user space networking solutions.
 
@@ -91,51 +91,41 @@ The required number of connection points to a Pod is described in `e.cap.004` ab
 
 | Reference Model Section | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Implementation Reference |
 |---|---|---|---|---|---|
-| [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.001 | Number of CPU (Sockets) | 2 | 2 | |
-| [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.002 | Number of Cores per CPU | 20 | 20 | |
-| [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.003 | NUMA | Not required | Must support | |
-| [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.004 | Simultaneous Multithreading/Hyperthreading (SMT/HT) | Must support | Must support | |
-| [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cac.cfg.001 | GPU | Not required | Not required | |
-| [5.4.2](../../../ref_model/chapters/chapter05.md#542-storage-configurations) | infra.hw.stg.hdd.cfg.001 | Local Storage HDD | *No requirement specified* | *No requirement specified* | |
-| [5.4.2](../../../ref_model/chapters/chapter05.md#542-storage-configurations) | infra.hw.stg.ssd.cfg.002 | Local Storage SSD | Should support | Should support | |
-| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nic.cfg.001 | Total Number of NIC Ports available in the host | 4 | 4 | |
-| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nic.cfg.002 | Port speed specified in Gbps (minimum values) | 10 | 25 | |
-| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.pci.cfg.001 | Number of PCIe slots available in the host | 8 | 8 | |
-| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.pci.cfg.002 | PCIe speed | Gen 3 | Gen 3 | |
-| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.pci.cfg.003 | PCIe Lanes | 8 | 8 | |
-| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nac.cfg.001 | Cryptographic Acceleration | Not required | Optional | |
-| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nac.cfg.002 | A SmartNIC that is used to offload vSwitch functionality to hardware | Not required | Optional<sup>(1)</sup> | |
-| [5.4.3](../../../ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nac.cfg.003 | Compression | *No requirement specified* | *No requirement specified* | |
-
-<p align="center"><b>Table 2-4:</b> Reference Model Requirements: Cloud Infrastructure Hardware Profile Requirements</p>
+| [5.4.1](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.001 | Number of CPU (Sockets) | 2 | 2 | [Substrate](./README.md#substrate-configuration) |
+| [5.4.1](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.002 | Number of Cores per CPU | 20 | 20 | [Substrate](./README.md#substrate-configuration) |
+| [5.4.1](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.003 | NUMA | Not required | Must support | [Substrate](./README.md#substrate-configuration) |
+| [5.4.1](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.004 | Simultaneous Multithreading/Hyperthreading (SMT/HT) | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
+| [5.4.1](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cac.cfg.001 | GPU | Not required | Not required | [Substrate](./README.md#substrate-configuration) |
+| [5.4.2](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#542-storage-configurations) | infra.hw.stg.hdd.cfg.001 | Local Storage HDD | *No requirement specified* | *No requirement specified* | |
+| [5.4.2](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#542-storage-configurations) | infra.hw.stg.ssd.cfg.002 | Local Storage SSD | Should support | Should support | [Substrate](./README.md#substrate-configuration) |
+| [5.4.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nic.cfg.001 | Total Number of NIC Ports available in the host | 4 | 4 | |
+| [5.4.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nic.cfg.002 | Port speed specified in Gbps (minimum values) | 10 | 25 | [Substrate](./README.md#substrate-configuration) |
+| [5.4.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.pci.cfg.001 | Number of PCIe slots available in the host | 8 | 8 | [Substrate](./README.md#substrate-configuration) |
+| [5.4.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.pci.cfg.002 | PCIe speed | Gen 3 | Gen 3 | [Substrate](./README.md#substrate-configuration) |
+| [5.4.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.pci.cfg.003 | PCIe Lanes | 8 | 8 | [Substrate](./README.md#substrate-configuration) |
+| [5.4.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nac.cfg.001 | Cryptographic Acceleration | Not required | Optional | |
+| [5.4.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nac.cfg.002 | A SmartNIC that is used to offload vSwitch functionality to hardware | Not required | Optional<sup>(1)</sup> | |
+| [5.4.3](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter05.md#543-network-resources) | infra.hw.nac.cfg.003 | Compression | *No requirement specified* | *No requirement specified* | |
 
 **(1)** There is no vSwitch in case of containers, but a SmartNIC can be used to offload any other network processing.
 
-<a name="2.2.5"></a>
 ### 2.2.5 Cloud Infrastructure Management Requirements
 
 | Reference Model Section | Reference | Description | Requirement (common to all Profiles) | Specification Reference |
 |---|---|---|---|---|
-| [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.001 | Capability to allocate virtual compute resources to a workload | Must support | |
-| [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.002 | Capability to allocate virtual storage resources to a workload | Must support | |
-| [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.003 | Capability to allocate virtual networking resources to a workload | Must support | |
-| [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.004 | Capability to isolate resources between tenants | Must support | |
-| [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.005 | Capability to manage workload software images | Must support | |
-| [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.006 | Capability to provide information related to allocated virtualised resources per tenant | Must support | |
-| [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.007 | Capability to notify state changes of allocated resources | Must support | |
-| [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.008 | Capability to collect and expose performance information on virtualised resources allocated | Must support | |
-| [4.1.5](../../../ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.009 | Capability to collect and notify fault information on virtualised resources | Must support | |
+| [4.1.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.001 | Capability to allocate virtual compute resources to a workload | Must support | [Substrate](./README.md#substrate-configuration) |
+| [4.1.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.002 | Capability to allocate virtual storage resources to a workload | Must support | [Substrate](./README.md#substrate-configuration) |
+| [4.1.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.003 | Capability to allocate virtual networking resources to a workload | Must support | [Substrate](./README.md#substrate-configuration) |
+| [4.1.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.004 | Capability to isolate resources between tenants | Must support | [Substrate](./README.md#substrate-configuration) |
+| [4.1.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.005 | Capability to manage workload software images | Must support | [Substrate](./README.md#substrate-configuration) |
+| [4.1.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.006 | Capability to provide information related to allocated virtualised resources per tenant | Must support | [Substrate](./README.md#substrate-configuration) |
+| [4.1.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.007 | Capability to notify state changes of allocated resources | Must support | [Substrate](./README.md#substrate-configuration) |
+| [4.1.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.008 | Capability to collect and expose performance information on virtualised resources allocated | Must support | [Substrate](./README.md#substrate-configuration) |
+| [4.1.5](https://github.com/cntt-n/CNTT/blob/master/doc/ref_model/chapters/chapter04.md#415-cloud-infrastructure-management-capabilities) | e.man.009 | Capability to collect and notify fault information on virtualised resources | Must support | [Substrate](./README.md#substrate-configuration)|
 
-<!--
-These rows are removed and commented out as it's not clear what the requirement is.
-| infra.stg.cfg.001 | Catalogue storage Types | | Y |
--->
-<p align="center"><b>Table 2-5:</b> Reference Model Requirements: Cloud Infrastructure Management Requirements</p>
-
-<a name="2.2.6"></a>
 ### 2.2.6 Cloud Infrastructure Security Requirements
 
-| Reference Model Section | Reference | Requirement (common to all Profiles) | Specification Reference |
+| Reference Model Section | Reference | Requirement (common to all Profiles) | Implementation Reference |
 |---|---|---|---|
 | [7.11.1](../../../ref_model/chapters/chapter07.md#7111-system-hardening) | sec.gen.001 | The Platform **must** maintain the state to what it is specified to be and does not change unless through change management process. |   |  |
 | [7.11.1](../../../ref_model/chapters/chapter07.md#7111-system-hardening) | sec.gen.002 | All systems part of Cloud Infrastructure **must** support password hardening (strength and rules for updates (process), storage and transmission, etc.) |  | Hardening: NIST SP 800-63B |

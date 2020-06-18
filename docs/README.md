@@ -51,8 +51,7 @@ The release cycle of the Charmed Kubernetes (CK) is tightly synchronized to the 
 
 ## Substrate Configuration
 
-### Infrastructure flavors
-
+Consult [substrate configuration](./substrate-configuration.md).
 
 ### Infrastructure roles
 
@@ -60,17 +59,9 @@ The following table describes the deployment roles, flavors and minimum node cou
 
 |  **Role** | **Co-located K8s Services** | **# Nodes** | **Instance Flavor** |
 | :--- | :--- | :---: | :--- |
-|  **LMA Nodes** | Juju Controller, Nagios, Graylog, Prometheus | 3 |  |
-|  **Control Nodes** | k8s master, etcd, easyrsa, kubeapi load balancer | 3 |  |
-|  **Worker Nodes** | k8s worker  | 6 |  |
-
-### Infrastructure networking
-
-XXX: TBD networking desingn
-- required openstack networks   
-- DNS support
-- NTP
-- Proxy support
+|  **LMA Nodes** | Juju Controller, Nagios, Graylog, Prometheus | 3 | cntt-lma |
+|  **Control Nodes** | k8s master, etcd, easyrsa, kubeapi load balancer | 3 | cntt-k8s-master |
+|  **Worker Nodes** | k8s worker  | 6 | cntt-k8s-worker |
 
 ## Juju
 
