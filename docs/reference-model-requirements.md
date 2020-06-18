@@ -9,15 +9,15 @@ This document summarizes the [requirements](https://github.com/cntt-n/CNTT/blob/
 <a name="2.2.1"></a>
 ### 2.2.1 Cloud Infrastructure Software Profile Capabilities
 
-| Reference Model Section | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Specification Reference |
+| Reference Model Section | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Implementation Reference |
 |---|---|---|---|---|---|
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.001 | Max number of vCPU that can be assigned to a single Pod by the Cloud Infrastructure | At least 16 <sup>(1)</sup> | At least 16 <sup>(1)</sup> | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.002 | Max memory in MB that can be assigned to a single Pod by the Cloud Infrastructure | at least 32 GB<sup>(1)</sup> | at least 32 GB<sup>(1)</sup> | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.003 | Max storage in GB that can be assigned to a single Pod by the Cloud Infrastructure | at least 320 GB<sup>(1)</sup> | at least 320 GB<sup>(1)</sup> | |
+| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.001 | Max number of vCPU that can be assigned to a single Pod by the Cloud Infrastructure | At least 16 <sup>(1)</sup> | At least 16 <sup>(1)</sup> | [Flavors](./README.md#infrastructure-flavors) |
+| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.002 | Max memory in MB that can be assigned to a single Pod by the Cloud Infrastructure | at least 32 GB<sup>(1)</sup> | at least 32 GB<sup>(1)</sup> | [Flavors](./README.md#infrastructure-flavors) |
+| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.003 | Max storage in GB that can be assigned to a single Pod by the Cloud Infrastructure | at least 320 GB<sup>(1)</sup> | at least 320 GB<sup>(1)</sup> | [Flavors](./README.md#infrastructure-flavors) |
 | [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.004 | Max number of connection points that can be assigned to a single Pod by the Cloud Infrastructure | 6 | 6 | |
 | [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.005 | Max storage in GB that can be attached / mounted to Pod by the Cloud Infrastructure | Up to 16TB<sup>(2)</sup> | Up to 16TB<sup>(2)</sup> | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.006 | CPU pinning support | Not required | Must support | |
-| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.007 | NUMA support | Not required | Must support | |
+| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.006 | CPU pinning support | Not required | Must support | [Flavors](./README.md#infrastructure-flavors) |
+| [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.007 | NUMA support | Not required | Must support | [Flavors](./README.md#infrastructure-flavors) |
 | [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.008 | IPSec Acceleration using the virtio-ipsec interface | Not required | Optional | |
 | [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.009 | Crypto Acceleration using the virtio-crypto interface | Not required | Optional | |
 | [4.2.5](../../../ref_model/chapters/chapter04.md#425-cloud-infrastructure-profile-capabilities-mapping) | e.cap.010 | Transcoding Acceleration | Not required | Not required | |
@@ -52,47 +52,44 @@ The required number of connection points to a Pod is described in `e.cap.004` ab
 
 | Reference Model Section | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Specification Reference |
 |---|---|---|---|---|---|
-| [4.2.2](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications) | n1, n2, n3, n4, n5, n6	| 1, 2, 3, 4, 5, 6 Gbps | Must support | Must support | |
-| [4.2.2](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications) | nn10, n20, n30, n40, n50, n60	| 10, 20, 30, 40, 50, 60 Gbps | Must support | Must support | |
-| [4.2.2](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications) | n25, n50, n75, n100, n125, n150	| 25, 50, 75, 100, 125, 150 Gbps | Must support | Must support | |
-| [4.2.2](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications) | nn50, n100, n150, n200, n250, n300	| 50, 100, 150, 200, 250, 300 Gbps | Must support | Must support | |
-| [4.2.2](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications) | n100, n200, n300, n400, n500, n600	| 100, 200, 300, 400, 500, 600 Gbps | Must support | Must support | |
+| [4.2.2](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications) | n1, n2, n3, n4, n5, n6	| 1, 2, 3, 4, 5, 6 Gbps | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
+| [4.2.2](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications) | nn10, n20, n30, n40, n50, n60	| 10, 20, 30, 40, 50, 60 Gbps | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
+| [4.2.2](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications) | n25, n50, n75, n100, n125, n150	| 25, 50, 75, 100, 125, 150 Gbps | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
+| [4.2.2](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications) | nn50, n100, n150, n200, n250, n300	| 50, 100, 150, 200, 250, 300 Gbps | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
+| [4.2.2](../../../ref_model/chapters/chapter04.md#422-virtual-network-interface-specifications) | n100, n200, n300, n400, n500, n600	| 100, 200, 300, 400, 500, 600 Gbps | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
 
 
 ### 2.2.3 Cloud Infrastructure Software Profile Requirements
 
-| Reference Model Section | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Specification Reference |
+| Reference Model Section | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Implementation Reference |
 |---|---|---|---|---|---|
-| [5.2.1](../../../ref_model/chapters/chapter05.md#521-virtual-compute) | infra.com.cfg.001 | CPU allocation ratio | 1:1 | 1:1 | |
-| [5.2.1](../../../ref_model/chapters/chapter05.md#521-virtual-compute) | infra.com.cfg.002 | NUMA awareness | Must support | Must support | |
-| [5.2.1](../../../ref_model/chapters/chapter05.md#521-virtual-compute) | infra.com.cfg.003 | CPU pinning capability | Must support | Must support | |
-| [5.2.1](../../../ref_model/chapters/chapter05.md#521-virtual-compute) | infra.com.cfg.004 | Huge Pages | Must support | Must support | |
-| [5.2.2](../../../ref_model/chapters/chapter05.md#522-virtual-storage) | infra.stg.cfg.002 | Storage Block | Must support | Must support | |
-| [5.2.2](../../../ref_model/chapters/chapter05.md#522-virtual-storage) | infra.stg.cfg.003 | Storage with replication | Not required | Must support | |
-| [5.2.2](../../../ref_model/chapters/chapter05.md#522-virtual-storage) | infra.stg.cfg.004 | Storage with encryption | Must support | Must support | |
-| [5.2.2](../../../ref_model/chapters/chapter05.md#522-virtual-storage) | infra.stg.acc.cfg.001 | Storage IOPS oriented | Not required | Must support | |
+| [5.2.1](../../../ref_model/chapters/chapter05.md#521-virtual-compute) | infra.com.cfg.001 | CPU allocation ratio | 1:1 | 1:1 | [Substrate](./README.md#substrate-configuration) |
+| [5.2.1](../../../ref_model/chapters/chapter05.md#521-virtual-compute) | infra.com.cfg.002 | NUMA awareness | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
+| [5.2.1](../../../ref_model/chapters/chapter05.md#521-virtual-compute) | infra.com.cfg.003 | CPU pinning capability | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
+| [5.2.1](../../../ref_model/chapters/chapter05.md#521-virtual-compute) | infra.com.cfg.004 | Huge Pages | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
+| [5.2.2](../../../ref_model/chapters/chapter05.md#522-virtual-storage) | infra.stg.cfg.002 | Storage Block | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
+| [5.2.2](../../../ref_model/chapters/chapter05.md#522-virtual-storage) | infra.stg.cfg.003 | Storage with replication | Not required | Must support | [Substrate](./README.md#substrate-configuration) |
+| [5.2.2](../../../ref_model/chapters/chapter05.md#522-virtual-storage) | infra.stg.cfg.004 | Storage with encryption | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
+| [5.2.2](../../../ref_model/chapters/chapter05.md#522-virtual-storage) | infra.stg.acc.cfg.001 | Storage IOPS oriented | Not required | Must support | [Substrate](./README.md#substrate-configuration) |
 | [5.2.2](../../../ref_model/chapters/chapter05.md#522-virtual-storage) | infra.stg.acc.cfg.002 | Storage capacity oriented | Not required | Not required | |
-| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.cfg.001 | IO virtualisation using virtio1.1 | Must support<sup>(1)</sup> | Must support<sup>(1)</sup>| |
-| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.cfg.002 | The overlay network encapsulation protocol needs to enable ECMP in the underlay to take advantage of the scale-out features of the network fabric.<sup>(2)</sup> | Must support VXLAN, MPLSoUDP, GENEVE, other | *No requirement specified* | |
-| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.cfg.003 | Network Address Translation | Must support | Must support | |
-| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.cfg.004 | Security Groups | Must support | Must support | |
-| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.cfg.005 | SFC support | Not required | Must support | |
-| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.cfg.006 | Traffic patterns symmetry | Must support | Must support | |
-| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.acc.cfg.001 | vSwitch optimisation | Not required | Must support DPDK<sup>(3)</sup>| |
-| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.acc.cfg.002 | Support of HW offload | Not required | Must support SmartNic | |
-| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.acc.cfg.003 | Crypto acceleration | Not required | Must support | |
-| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.acc.cfg.004 | Crypto Acceleration Interface | Not required | Must support | |
-
-<p align="center"><b>Table 2-3:</b> Reference Model Requirements: Cloud Infrastructure Software Profile Requirements</p>
+| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.cfg.001 | IO virtualisation using virtio1.1 | Must support<sup>(1)</sup> | Must support<sup>(1)</sup>| [Substrate](./README.md#substrate-configuration) |
+| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.cfg.002 | The overlay network encapsulation protocol needs to enable ECMP in the underlay to take advantage of the scale-out features of the network fabric.<sup>(2)</sup> | Must support VXLAN, MPLSoUDP, GENEVE, other | *No requirement specified* | [Substrate](./README.md#substrate-configuration) |
+| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.cfg.003 | Network Address Translation | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
+| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.cfg.004 | Security Groups | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
+| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.cfg.005 | SFC support | Not required | Must support | [Substrate](./README.md#substrate-configuration) |
+| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.cfg.006 | Traffic patterns symmetry | Must support | Must support | [Substrate](./README.md#substrate-configuration) |
+| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.acc.cfg.001 | vSwitch optimisation | Not required | Must support DPDK<sup>(3)</sup>| [Substrate](./README.md#substrate-configuration) |
+| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.acc.cfg.002 | Support of HW offload | Not required | Must support SmartNic | [Substrate](./README.md#substrate-configuration) |
+| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.acc.cfg.003 | Crypto acceleration | Not required | Must support | [Substrate](./README.md#substrate-configuration) |
+| [5.2.3](../../../ref_model/chapters/chapter05.md#523-virtual-networking) | infra.net.acc.cfg.004 | Crypto Acceleration Interface | Not required | Must support | [Substrate](./README.md#substrate-configuration) |
 
 **(1)** [Workload Transition Guidelines.](../chapters/appendix-a.md) might have other interfaces (such as SR-IOV VFs to be directly passed to a VM or a Pod) or NIC-specific drivers on guest machines transiently allowed until more mature solutions are available with an acceptable level of efficiency to support telecom workloads (for example regarding CPU and energy consumption).<br>
 **(2)** In Kubernetes based infrastructures network separation is possible without an overlay (e.g.: with IPVLAN)<br>
 **(3)** This feature is not applicable for Kubernetes based infrastructures due to lack of vSwitch however workloads need access to user space networking solutions.
 
-<a name="2.2.4"></a>
 ### 2.2.4 Cloud Infrastructure Hardware Profile Requirements
 
-| Reference Model Section | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Specification Reference |
+| Reference Model Section | Reference  | Description | Requirement for Basic Profile | Requirement for Network Intensive Profile| Implementation Reference |
 |---|---|---|---|---|---|
 | [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.001 | Number of CPU (Sockets) | 2 | 2 | |
 | [5.4.1](../../../ref_model/chapters/chapter05.md#541-compute-resources) | infra.hw.cpu.cfg.002 | Number of Cores per CPU | 20 | 20 | |
