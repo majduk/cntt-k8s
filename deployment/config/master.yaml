@@ -1,0 +1,47 @@
+project:
+  customer: CNTT
+  project: CNTT-k8s
+  opportunity: CNTT
+layers:
+- name: existing_openstack
+  type: existing_openstack
+  config:
+    novarc_path: ~/keys/raw.novarc
+- name: juju_openstack_controller
+  type: juju_openstack_controller
+  parent: existing_openstack
+  config:
+    controller_name: k8s-controller
+    ha: 3
+    model_defaults: # optional dict
+      use-floating-ip: True
+      automatically-retry-hooks: false
+      network: net-local-k8s-controller
+      use-default-secgroup: True
+    extra_options: 
+      config:
+        use-floating-ip: "false"
+        network: net-k8s-controller
+        use-default-secgroup: "true"
+      bootstrap-constraints: "instance-type=<FLAVOR NAME>"
+    image_metadata:
+      - series: bionic
+        arch: amd64
+        uuid: <UUID OF IMAGE TO USE>
+- name: kubernetes
+  type: kubernetes
+  parent: juju_openstack_controller
+  config:
+    # model needs to be pre-created as FCE does not accept
+    # credentials
+    juju_model: k8s-cluster
+    bundles: # Primary bundle followed by optional overlays.
+    - kubernetes_bundle.yaml
+    map-machines: existing
+    trusted_applications:
+    - openstack-integrator
+    crashdump:
+      addons:
+        - config
+        - debug-layer
+        - k8s-pod-logs

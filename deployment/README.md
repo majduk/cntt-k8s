@@ -10,3 +10,5 @@ The underlaying cloud needs to be configured to meet the prerequisistes
 - LBaaS configured
 
 ## Deployment guide
+
+Please refer to [Deployment Guide](../docs/deployment-guide.md)

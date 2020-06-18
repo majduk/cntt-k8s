@@ -4,7 +4,7 @@ This repository contains specification for [Juju](jaas.ai) managed CNTT [require
 
 ## Repository structure
 
-- [docs](./docs) - environment low level design
+- [docs](./docs) - environment low level design and deployment guide
 - [deployment](./deployment) - deployment artifacts
 
 ## References
